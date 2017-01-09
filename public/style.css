@@ -1,0 +1,41 @@
+body {
+  background-color: #000;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: : "Open Sans";
+  font-size: 4em;
+}
+input[type=password] {
+  letter-spacing: .5em;
+}
+input[type=password].access-denied {
+  color: #f00;
+  border: solid 2px #f00;
+}
+input[type=password].access-granted {
+  color: #0f0;
+  border: solid 2px #0f0;
+}
+input, button {
+  text-align: center;
+  color: #fff;
+  background-color: #000;
+  border: solid 1px #fff;
+  border-radius: 4px;
+}
+input, button, progress {
+  padding: .5em;
+  margin: .5em;
+}
+.hidden {
+  opacity: 0;
+}
+#progressbar-field {
+  color: #0f0;
+  text-align: center;
+}

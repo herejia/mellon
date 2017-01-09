@@ -1,0 +1,10 @@
+{
+  "passcode": "REPLACE-ME",
+  "sslpath": {
+      "key": "/etc/ssl/localcerts/REPLACE-ME.key",
+      "cert": "/etc/ssl/localcerts/REPLACE-ME.pem"
+  },
+  "https": {
+    "port": 443
+  }
+}
