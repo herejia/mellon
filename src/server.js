@@ -3,15 +3,16 @@ const fs = require('fs');
 const express = require('express');
 const bodyParser = require('body-parser');
 const gpio = require('./gpio.js');
+const rootDir = __dirname + '/..';
 
-const config = JSON.parse(fs.readFileSync('config.json', {
+const config = JSON.parse(fs.readFileSync(rootDir + '/resources/config.json', {
   encoding: 'UTF-8'
 }));
 
 console.log('Starting HTTP server');
 const app = express();
 app.use(bodyParser.json());
-app.use(express.static('public'));
+app.use(express.static(rootDir + '/public'));
 
 app.post('/open', function(request, response) {
   if (request.body['passcode'] === config.passcode) {
@@ -24,7 +25,7 @@ app.post('/open', function(request, response) {
   }
 });
 app.get('/', function(req, res) {
-  res.sendFile('index.html', { root: 'public' });
+  res.sendFile('index.html', { root: rootDir + '/public' });
 });
 
 var options = {

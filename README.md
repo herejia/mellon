@@ -2,7 +2,7 @@
 ## Requirement
 ### Hardware
  * Raspberry PI (mine is a B+ running Raspbian)
- * Parking gate opening remote control (taped on the edge on my balcony)
+ * Parking gate opening remote control (taped on the edge of my balcony)
  * Power MOSFET
 
 ### Software
@@ -35,6 +35,10 @@ the circuit [this link](http://www.falstad.com/circuit/circuitjs.html?cct=$+13+0
 ssh pi@raspberrypi.local
 sudo apt-get install nodejs npm
 sudo npm install
-edit config.json # to suit your needs
-sudo nodejs srv/server.js
+edit resources/config.json # to suit your needs
+chmod +x run.sh
+# let's run it when the pi boots
+sudo cp {resources,}/etc/init.d/mellon
+sudo chmod +x /etc/init.d/mellon
+sudo update-rc.d mellon defaults
 ```

@@ -1,0 +1,22 @@
+#!/bin/bash
+# /etc/init.d/mellon
+
+### BEGIN INIT INFO
+# Provides:          mellon
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Parking gate opener
+# Description:       Web interface to open the parking gate
+### END INIT INFO
+
+
+case "$1" in
+    start)
+        echo "Starting mellon"
+        . /home/pi/mellon/run.sh &
+        ;;
+esac
+
+exit 0
