@@ -11,17 +11,17 @@ const config = JSON.parse(fs.readFileSync('/etc/mellon/config.json', {
 
 console.log('Starting HTTP server');
 const app = express();
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(rootDir + '/public'));
 
 app.post('/open', function(request, response) {
   if (request.body['passcode'] === config.passcode) {
     console.log('Access granted');
     gpio.openRemoteGpio();
-    response.sendStatus(200);
+    response.redirect('/');
   } else {
     console.log('Access denied', request.body['passcode']);
-    response.sendStatus(401);
+    response.redirect('/');
   }
 });
 app.get('/', function(req, res) {

@@ -1,41 +1,49 @@
 body {
   background-color: #000;
-  height: 100%;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-family: : "Open Sans";
   font-size: 4em;
 }
+form {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-family: : "Open Sans";
+}
 input[type=password] {
-  letter-spacing: .5em;
-}
-input[type=password].access-denied {
-  color: #f00;
-  border: solid 2px #f00;
-}
-input[type=password].access-granted {
-  color: #0f0;
-  border: solid 2px #0f0;
-}
-input, button {
   text-align: center;
   color: #fff;
   background-color: #000;
   border: solid 1px #fff;
   border-radius: 4px;
+  width: 50vh;
+  height: 5vh;
+  font-size: 4vh;
+  letter-spacing: 1vh;
 }
-input, button, progress {
-  padding: .5em;
-  margin: .5em;
+.open-btn {
+  border-radius: 100%;
+  min-height: 50vh;
+  min-width: 50vh;
+  box-shadow: 0 0 50px 0px;
+  color: #060;
+  background-color: #000;
+  border: solid #060;
 }
-.hidden {
-  opacity: 0;
+.open-btn span {
+  color: #000;
+  text-shadow: -4px 0 #0F0, 0 -4px #0F0, 4px 0 #0F0, 0 4px #0F0;
+  text-transform: uppercase;
+  font-size: 25vh;
 }
-#progressbar-field {
-  color: #0f0;
-  text-align: center;
+.open-btn:hover .lock {
+  display: none;
+}
+.open-btn:hover .unlock {
+  display: inline-block;
+}
+.open-btn span.unlock {
+  display: none;
 }

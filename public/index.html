@@ -3,18 +3,20 @@
   <title>Mellon</title>
   <link href="style.css" rel="stylesheet" type="text/css">
   <script src="script.js" type="text/javascript"></script>
+  <script src="https://use.fontawesome.com/2721b0a3a7.js"></script>
 </head>
 <body>
-  <div>
-    <input type="password" id="passcode-input" name="passcode" autofocus minlength="6" maxlength="6"/>
-  </div>
-  <div>
-    <button type="button" onclick="openGate()">Open</button>
-    <button type="button" onclick="clearPassword()">Reset</button>
-  </div>
-  <div id="progressbar-field" class="hidden">
-    <progress value="0" max="100">Opening</progress>
-    <h3 class="hidden">Gate opened</h3>
+  <form method="POST" action="/open">
+    <button class="open-btn">
+      <span class="lock fa fa-lock"></span>
+      <span class="unlock fa fa-unlock-alt"></span>
+    </button>
+    <input
+      id="passcode-input" name="passcode"
+      minlength="6" maxlength="6" required
+      placeholder="Password"
+      type="password" />
+  </form>
   </div>
 </body>
 </html>
