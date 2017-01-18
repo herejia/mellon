@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const gpio = require('./gpio.js');
 const rootDir = __dirname + '/..';
 
-const config = JSON.parse(fs.readFileSync(rootDir + '/resources/config.json', {
+const config = JSON.parse(fs.readFileSync('/etc/mellon/config.json', {
   encoding: 'UTF-8'
 }));
 

@@ -39,6 +39,8 @@ edit resources/config.json # to suit your needs
 chmod +x run.sh
 # let's run it when the pi boots
 sudo cp {resources,}/etc/init.d/mellon
+sudo mkdir -p /etc/mellon
+sudo cp {resources,}/etc/mellon/config.json
 sudo chmod +x /etc/init.d/mellon
 sudo update-rc.d mellon defaults
 ```
